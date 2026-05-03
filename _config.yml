@@ -1,0 +1,39 @@
+title: ALL THE POWER TO ALL THE PEOPLE
+description: >
+  We have more in common with each other than with those who rule us.
+  Mutual aid. Community power. Solidarity forever.
+baseurl: ""
+url: "https://allthepowertoallthepeople.world"
+
+author:
+  name: The People
+
+permalink: /:categories/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  principles:
+    output: false
+  actions:
+    output: true
+    permalink: /act/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

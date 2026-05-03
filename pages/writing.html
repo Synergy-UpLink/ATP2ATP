@@ -1,0 +1,47 @@
+---
+layout: default
+title: Writing
+description: Analysis, essays, and ideas from allthepowertoallthepeople.world
+permalink: /writing/
+---
+
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <span class="page-hero__tag">Words That Work</span>
+    <h1 class="page-hero__title">Writing</h1>
+    <p class="page-hero__meta" style="font-size:1rem;letter-spacing:normal;text-transform:none;opacity:0.8;margin-top:1rem;font-family:var(--font-head);font-style:italic;">
+      Analysis, history, and tools for understanding what's happening and why.
+    </p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section__inner">
+
+    {% if site.posts.size > 0 %}
+    <div class="posts-grid">
+      {% for post in site.posts %}
+      <a href="{{ post.url | relative_url }}" class="post-card">
+        {% if post.category %}
+        <p class="post-card__tag">{{ post.category }}</p>
+        {% endif %}
+        <h2 class="post-card__title">{{ post.title }}</h2>
+        {% if post.excerpt %}
+        <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        {% endif %}
+        <p class="post-card__meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center;padding:5rem 2rem;">
+      <p style="font-family:var(--font-display);font-size:3rem;opacity:0.2;">✊</p>
+      <p style="font-family:var(--font-head);font-size:1.2rem;font-style:italic;color:var(--text-muted);margin-top:1rem;">
+        Writing coming soon. Check back — or contribute something.
+      </p>
+      <a href="mailto:hello@allthepowertoallthepeople.world" class="btn btn--dark" style="margin-top:2rem;display:inline-block;">Contribute →</a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
